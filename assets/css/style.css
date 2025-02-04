@@ -79,6 +79,9 @@ nav.main a:hover {
 .searched .search-container {
   top: 80%;
 }
+.searched .search-box h2 {
+  display: none;
+}
 .search-box {
   max-width: 800px;
   margin: 0 auto;
