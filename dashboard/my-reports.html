@@ -1,0 +1,87 @@
+<!-- my-reports.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <title>📄 My Reports</title>
+</head>
+
+<body>
+
+    <nav class="main">
+        <div class="logo-area">
+            <a href="../index.html">TrackMyIMEI</a>
+        </div>
+        <ul>
+            <li><a href="../report.html">Report</a></li>
+            <li><a href="./dashboard.html">Dashboard</a></li>
+            <li><a href="../login.html">Login</a></li>
+            <li><a href="../register.html">Register</a></li>
+        </ul>
+    </nav>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="../assets/images/avatar.webp" alt="Avatar" class="user-avatar">
+                <h3>John Doe</h3>
+                <p class="text-secondary">john@example.com</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html" class="nav-link"><span>📒 Dashboard</span></a></li>
+                    <li><a href="./my-devices.html" class="nav-link"><span>📱 My Devices</span></a></li>
+                    <!-- <li><a href="#" class="nav-link"><span>🔍 Search History</span></a></li> -->
+                    <li><a href="./my-reports.html" class="nav-link"><span>📄 My Reports</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <!-- <h2 class="page-title">My Reports</h2> -->
+
+            <!-- Report Item 1 -->
+            <div class="report-item">
+                <div class="report-status status-approved">Resolved</div>
+                <h4>iPhone 15 Pro Report</h4>
+                <div class="report-details">
+                    <div>
+                        <p class="text-secondary">Report ID: #12345</p>
+                        <p>Date Reported: 2023-12-10</p>
+                    </div>
+                    <div>
+                        <p>Last Location: Central Park</p>
+                        <p>Status Update: Device recovered</p>
+                    </div>
+                </div>
+                <div class="report-actions">
+                    <button class="btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Report Item 2 -->
+            <div class="report-item">
+                <div class="report-status status-waiting">Under Review</div>
+                <h4>Samsung Galaxy S23 Report</h4>
+                <div class="report-details">
+                    <div>
+                        <p class="text-secondary">Report ID: #12346</p>
+                        <p>Date Reported: 2023-12-14</p>
+                    </div>
+                    <div>
+                        <p>Last Location: Downtown Area</p>
+                        <p>Status Update: Verification pending</p>
+                    </div>
+                </div>
+                <div class="report-actions">
+                    <button class="btn">Edit Report</button>
+                    <button class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

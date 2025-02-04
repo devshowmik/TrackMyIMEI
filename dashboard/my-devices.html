@@ -1,0 +1,75 @@
+<!-- my-devices.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <title>📱 My Devices</title>
+</head>
+
+<body>
+    <nav class="main">
+        <div class="logo-area">
+            <a href="../index.html">TrackMyIMEI</a>
+        </div>
+        <ul>
+            <li><a href="../report.html">Report</a></li>
+            <li><a href="./dashboard.html">Dashboard</a></li>
+            <li><a href="../login.html">Login</a></li>
+            <li><a href="../register.html">Register</a></li>
+        </ul>
+    </nav>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="../assets/images/avatar.webp" alt="Avatar" class="user-avatar">
+                <h3>John Doe</h3>
+                <p class="text-secondary">john@example.com</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./dashboard.html" class="nav-link"><span>📒 Dashboard</span></a></li>
+                    <li><a href="./my-devices.html" class="nav-link"><span>📱 My Devices</span></a></li>
+                    <!-- <li><a href="#" class="nav-link"><span>🔍 Search History</span></a></li> -->
+                    <li><a href="./my-reports.html" class="nav-link"><span>📄 My Reports</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <!-- <h2 class="page-title">My Registered Devices</h2> -->
+
+            <div class="devices-grid">
+                <!-- Device Card 1 -->
+                <div class="device-card">
+                    <div class="status-indicator status-waiting">Waiting Approval</div>
+                    <h4>iPhone 15 Pro</h4>
+                    <p class="text-secondary">IMEI: *********456</p>
+                    <p>Color: Natural Titanium</p>
+                    <p>Registered: 2023-12-15</p>
+                    <div class="device-actions">
+                        <button class="btn">Edit</button>
+                        <button class="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+
+                <!-- Device Card 2 -->
+                <div class="device-card">
+                    <div class="status-indicator status-approved">Approved</div>
+                    <h4>Samsung Galaxy S23</h4>
+                    <p class="text-secondary">IMEI: *********789</p>
+                    <p>Color: Phantom Black</p>
+                    <p>Registered: 2023-11-20</p>
+                    <div class="device-actions">
+                        <button class="btn">View</button>
+                        <button class="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
