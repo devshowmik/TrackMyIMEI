@@ -22,14 +22,16 @@ Version: 1.3
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
+ul {
+  list-style: none;
+}
 body {
   background: var(--primary-bg);
   color: var(--text-primary);
   min-height: 100vh;
 }
 
-nav {
+nav.main {
   background: var(--secondary-bg);
   padding: 1rem 2rem;
   backdrop-filter: blur(10px);
@@ -39,21 +41,20 @@ nav {
   align-items: center;
 }
 
-nav ul {
+nav.main ul {
   display: flex;
-  list-style: none;
   gap: 2rem;
   align-items: center;
 }
 
-nav a {
+nav.main a {
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav.main a:hover {
   color: var(--accent);
 }
 

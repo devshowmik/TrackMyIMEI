@@ -1,0 +1,82 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+
+<body>
+    <nav class="main">
+        <div class="logo-area">
+            <a href="index.html">TrackMyIMEI</a>
+        </div>
+        <ul>
+            <li><a href="report.html">Report</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="./assets/images/avatar.webp" alt="Avatar" class="user-avatar">
+                <h3>John Doe</h3>
+                <p class="text-secondary">john@example.com</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link"><span>📱 My Devices</span></a></li>
+                    <li><a href="#" class="nav-link"><span>🔍 Search History</span></a></li>
+                    <li><a href="#" class="nav-link"><span>📄 My Reports</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Registered Devices</h4>
+                    <h2>3</h2>
+                </div>
+                <div class="stat-card">
+                    <h4>Active Reports</h4>
+                    <h2>1</h2>
+                </div>
+                <div class="stat-card">
+                    <h4>Successful Recoveries</h4>
+                    <h2>2</h2>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <p>📱 New device registered (IMEI: *********345)</p>
+                        <small class="text-secondary">2 hours ago</small>
+                    </div>
+                    <div class="activity-item">
+                        <p>✅ Ownership claim approved</p>
+                        <small class="text-secondary">1 day ago</small>
+                    </div>
+                    <div class="activity-item">
+                        <p>⚠️ New login from Chrome on Windows</p>
+                        <small class="text-secondary">2 days ago</small>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
