@@ -1,0 +1,215 @@
+/* <!-- styles.css -- > */
+/*
+Project Name: TrackMyIMEI
+Author: Shahriar Kabir Showmik
+Author URI: https://showmik.dev
+Description: This web solution helps users report and recover lost phones through a secure, modern platform. Built with HTML, CSS, and JavaScript. A streamlined tool for connecting device owners with recovery resources while prioritizing user-friendly interactions.
+Version: 1.3
+*/
+:root {
+  --primary-bg: #0a0a14;
+  --secondary-bg: #1a1a2a;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  /* --border-bottom:rgba(255, 255, 255, 0.1); */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+nav {
+  background: var(--secondary-bg);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 120px; /* Space for sticky search */
+}
+
+.search-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--secondary-bg);
+  padding: 1.5rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.searched .search-container {
+  top: 80%;
+}
+.search-box {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: var(--primary-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, var(--accent), #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(45deg, var(--accent-hover), #6d28d9);
+}
+
+.phone-card {
+  background: var(--secondary-bg);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.phone-card h2 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: var(--primary-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-primary);
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.result-container {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-bottom: 2rem;
+}
+.search-container.centered {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  background: transparent;
+  box-shadow: none;
+  border-top: none;
+}
+
+.result-container {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.result-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.phone-card {
+  background: var(--secondary-bg);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease-out;
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Add DeepSeek-style animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.phone-card {
+  animation: fadeIn 0.3s ease-out;
+}
