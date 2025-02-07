@@ -38,3 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+fetch('https://dash.imei.info/api/check/e7a49f39-64b3-4601-a7fd-0b12fb978a3b/?imei=000000000000000') // Ensure this matches your proxy endpoint
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));

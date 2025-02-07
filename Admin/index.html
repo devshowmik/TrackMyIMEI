@@ -1,0 +1,222 @@
+<!-- admin-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <style>
+        /* Additional Admin Styles */
+        .admin-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .admin-sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .admin-role {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .data-table th {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .bulk-actions {
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-bar {
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .admin-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            z-index: 1000;
+            width: 90%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>...</nav>
+
+    <div class="admin-container">
+        <!-- Super Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <h3 class="admin-role">Super Admin</h3>
+            <nav class="admin-nav">
+                <a href="#users" class="nav-link active">👑 User Management</a>
+                <a href="#analytics" class="nav-link">📈 System Analytics</a>
+                <a href="#logs" class="nav-link">📜 Activity Logs</a>
+                <a href="#settings" class="nav-link">⚙️ System Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Super Admin Main Content -->
+        <main class="admin-main">
+            <div class="filter-bar">
+                <input type="text" class="form-control" placeholder="Search users...">
+                <select class="form-control">
+                    <option>Filter by Role</option>
+                    <option>Report Admin</option>
+                    <option>Verification Admin</option>
+                </select>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Last Active</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john@admin.com</td>
+                        <td><span class="status-approved">Report Admin</span></td>
+                        <td>2h ago</td>
+                        <td>
+                            <button class="btn">Edit</button>
+                            <button class="btn btn-danger">Revoke</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
+
+<!-- report-admin.html -->
+<div class="admin-container">
+    <aside class="admin-sidebar">
+        <h3 class="admin-role">Report Admin</h3>
+        <nav class="admin-nav">
+            <a href="#reports" class="nav-link active">📋 All Reports</a>
+            <a href="#pending" class="nav-link">⏳ Pending Verification</a>
+            <a href="#resolved" class="nav-link">✅ Resolved Cases</a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h4>Total Reports</h4>
+                <h2>1,234</h2>
+            </div>
+            <div class="stat-card">
+                <h4>Pending Actions</h4>
+                <h2>56</h2>
+            </div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Report ID</th>
+                    <th>Device Info</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#12345</td>
+                    <td>iPhone 15 Pro</td>
+                    <td><span class="status-waiting">Under Review</span></td>
+                    <td>High</td>
+                    <td>
+                        <button class="btn">Verify</button>
+                        <button class="btn">Escalate</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+
+<!-- verification-admin.html -->
+<div class="admin-container">
+    <aside class="admin-sidebar">
+        <h3 class="admin-role">Verification Admin</h3>
+        <nav class="admin-nav">
+            <a href="#pending" class="nav-link active">📱 Pending Devices</a>
+            <a href="#verified" class="nav-link">✅ Verified Devices</a>
+            <a href="#blacklist" class="nav-link">⛔ Blacklisted</a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <div class="bulk-actions">
+            <button class="btn">Approve Selected</button>
+            <button class="btn btn-danger">Reject Selected</button>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>Device Model</th>
+                    <th>IMEI</th>
+                    <th>Submitted By</th>
+                    <th>Verification Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Samsung S23 Ultra</td>
+                    <td>*********789</td>
+                    <td>user@example.com</td>
+                    <td><span class="status-waiting">Pending</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
